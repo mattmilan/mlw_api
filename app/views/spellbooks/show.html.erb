@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @spellbook.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @spellbook.description %>
+</p>
+
+<p>
+  <strong>Img url:</strong>
+  <%= @spellbook.img_url %>
+</p>
+
+<%= link_to 'Edit', edit_spellbook_path(@spellbook) %> |
+<%= link_to 'Back', spellbooks_path %>

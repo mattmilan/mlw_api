@@ -1,0 +1,67 @@
+<%= form_with(model: familiar, local: true) do |form| %>
+  <% if familiar.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(familiar.errors.count, "error") %> prohibited this familiar from being saved:</h2>
+
+      <ul>
+      <% familiar.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :familiar_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tooltip %>
+    <%= form.text_field :tooltip, id: :familiar_tooltip %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :familiar_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :img_url %>
+    <%= form.text_field :img_url, id: :familiar_img_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :element %>
+    <%= form.text_field :element, id: :familiar_element %>
+  </div>
+
+  <div class="field">
+    <%= form.label :origin %>
+    <%= form.text_field :origin, id: :familiar_origin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :speed %>
+    <%= form.text_field :speed, id: :familiar_speed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :memory %>
+    <%= form.text_field :memory, id: :familiar_memory %>
+  </div>
+
+  <div class="field">
+    <%= form.label :disicpline %>
+    <%= form.text_field :disicpline, id: :familiar_disicpline %>
+  </div>
+
+  <div class="field">
+    <%= form.label :distracted_by %>
+    <%= form.text_field :distracted_by, id: :familiar_distracted_by %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

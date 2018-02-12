@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  spellbook: one
+  name: MyString
+  description: MyString
+  img_url: MyString
+  effect: MyString
+
+two:
+  spellbook: two
+  name: MyString
+  description: MyString
+  img_url: MyString
+  effect: MyString

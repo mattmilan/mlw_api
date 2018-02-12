@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @intruder.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @intruder.description %>
+</p>
+
+<p>
+  <strong>Img url:</strong>
+  <%= @intruder.img_url %>
+</p>
+
+<p>
+  <strong>Wants:</strong>
+  <%= @intruder.wants %>
+</p>
+
+<p>
+  <strong>Fears:</strong>
+  <%= @intruder.fears %>
+</p>
+
+<%= link_to 'Edit', edit_intruder_path(@intruder) %> |
+<%= link_to 'Back', intruders_path %>

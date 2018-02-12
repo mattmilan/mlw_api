@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @familiar.name %>
+</p>
+
+<p>
+  <strong>Tooltip:</strong>
+  <%= @familiar.tooltip %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @familiar.description %>
+</p>
+
+<p>
+  <strong>Img url:</strong>
+  <%= @familiar.img_url %>
+</p>
+
+<p>
+  <strong>Element:</strong>
+  <%= @familiar.element %>
+</p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @familiar.origin %>
+</p>
+
+<p>
+  <strong>Speed:</strong>
+  <%= @familiar.speed %>
+</p>
+
+<p>
+  <strong>Memory:</strong>
+  <%= @familiar.memory %>
+</p>
+
+<p>
+  <strong>Disicpline:</strong>
+  <%= @familiar.disicpline %>
+</p>
+
+<p>
+  <strong>Distracted by:</strong>
+  <%= @familiar.distracted_by %>
+</p>
+
+<%= link_to 'Edit', edit_familiar_path(@familiar) %> |
+<%= link_to 'Back', familiars_path %>

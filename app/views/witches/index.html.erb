@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Witches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Img url</th>
+      <th>Img url</th>
+      <th>Knowledge</th>
+      <th>Cuteness</th>
+      <th>Quickness</th>
+      <th>Patience</th>
+      <th>Favorite familar</th>
+      <th>Favorite element</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @witches.each do |witch| %>
+      <tr>
+        <td><%= witch.name %></td>
+        <td><%= witch.description %></td>
+        <td><%= witch.img_url %></td>
+        <td><%= witch.img_url %></td>
+        <td><%= witch.knowledge %></td>
+        <td><%= witch.cuteness %></td>
+        <td><%= witch.quickness %></td>
+        <td><%= witch.patience %></td>
+        <td><%= witch.favorite_familar %></td>
+        <td><%= witch.favorite_element %></td>
+        <td><%= link_to 'Show', witch %></td>
+        <td><%= link_to 'Edit', edit_witch_path(witch) %></td>
+        <td><%= link_to 'Destroy', witch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Witch', new_witch_path %>

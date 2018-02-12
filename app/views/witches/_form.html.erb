@@ -1,0 +1,67 @@
+<%= form_with(model: witch, local: true) do |form| %>
+  <% if witch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(witch.errors.count, "error") %> prohibited this witch from being saved:</h2>
+
+      <ul>
+      <% witch.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :witch_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :witch_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :img_url %>
+    <%= form.text_field :img_url, id: :witch_img_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :img_url %>
+    <%= form.text_field :img_url, id: :witch_img_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :knowledge %>
+    <%= form.number_field :knowledge, id: :witch_knowledge %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cuteness %>
+    <%= form.number_field :cuteness, id: :witch_cuteness %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quickness %>
+    <%= form.number_field :quickness, id: :witch_quickness %>
+  </div>
+
+  <div class="field">
+    <%= form.label :patience %>
+    <%= form.number_field :patience, id: :witch_patience %>
+  </div>
+
+  <div class="field">
+    <%= form.label :favorite_familar %>
+    <%= form.text_field :favorite_familar, id: :witch_favorite_familar %>
+  </div>
+
+  <div class="field">
+    <%= form.label :favorite_element %>
+    <%= form.text_field :favorite_element, id: :witch_favorite_element %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

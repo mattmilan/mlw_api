@@ -1,0 +1,42 @@
+<%= form_with(model: intruder, local: true) do |form| %>
+  <% if intruder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(intruder.errors.count, "error") %> prohibited this intruder from being saved:</h2>
+
+      <ul>
+      <% intruder.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :intruder_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :intruder_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :img_url %>
+    <%= form.text_field :img_url, id: :intruder_img_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wants %>
+    <%= form.text_field :wants, id: :intruder_wants %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fears %>
+    <%= form.text_field :fears, id: :intruder_fears %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
