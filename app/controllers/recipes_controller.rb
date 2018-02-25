@@ -19,6 +19,8 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit
+    @model = Recipe.find(params[:id]) # ... or whatever here
+    render :template => '_shared/common_edit_form'
   end
 
   # POST /recipes

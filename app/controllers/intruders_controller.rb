@@ -19,6 +19,8 @@ class IntrudersController < ApplicationController
 
   # GET /intruders/1/edit
   def edit
+    @model = Intruder.find(params[:id]) # ... or whatever here
+    render :template => '_shared/common_edit_form'
   end
 
   # POST /intruders

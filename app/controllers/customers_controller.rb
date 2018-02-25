@@ -19,6 +19,8 @@ class CustomersController < ApplicationController
 
   # GET /customers/1/edit
   def edit
+    @model = Customer.find(params[:id]) # ... or whatever here
+    render :template => '_shared/common_edit_form'
   end
 
   # POST /customers

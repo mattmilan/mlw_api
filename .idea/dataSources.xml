@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Rails mlw_api: test" uuid="fb4862b6-e7d4-497a-82e1-370cbe93c52d">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:mlw_api_test</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails mlw_api: production" uuid="37c59604-6d9f-4b0b-9e03-361e317dbbb4">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:mlw_api_pro</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails mlw_api: development" uuid="34dcf9a5-4042-4666-9e7a-4d067f717701">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:mlw_api_dev</jdbc-url>
+    </data-source>
+  </component>
+</project>

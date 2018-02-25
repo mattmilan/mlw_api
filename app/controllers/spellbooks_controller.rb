@@ -19,6 +19,8 @@ class SpellbooksController < ApplicationController
 
   # GET /spellbooks/1/edit
   def edit
+    @model = Spellbook.find(params[:id]) # ... or whatever here
+    render :template => '_shared/common_edit_form'
   end
 
   # POST /spellbooks

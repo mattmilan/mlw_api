@@ -19,6 +19,8 @@ class FamiliarsController < ApplicationController
 
   # GET /familiars/1/edit
   def edit
+    @model = Familiar.find(params[:id]) # ... or whatever here
+    render :template => '_shared/common_edit_form'
   end
 
   # POST /familiars

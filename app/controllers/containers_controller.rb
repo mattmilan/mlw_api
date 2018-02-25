@@ -4,21 +4,29 @@ class ContainersController < ApplicationController
   # GET /containers
   # GET /containers.json
   def index
-    @containers = Container.all
+    @models = Container.all
+    @headers = @models[0].attributes.keys
+    render :template => '_shared/common_index'
   end
 
   # GET /containers/1
   # GET /containers/1.json
   def show
+    @model = Container.find(params[:id]) # ... or whatever here
+    render :template => '_shared/common_show'
   end
+
 
   # GET /containers/new
   def new
-    @container = Container.new
+    @model = Container.new
+    render :template => '_shared/common_new'
   end
 
   # GET /containers/1/edit
   def edit
+    @model = Container.find(params[:id]) # ... or whatever here
+    render :template => '_shared/common_edit_form'
   end
 
   # POST /containers

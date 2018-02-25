@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Containers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <%= @headers.each do |index_header| %>
+      <th><%= index_header %>
+      <% end %>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @models.each do |model| %>
+      <% model.attributes.each do |attr_name, attr_value| %>
+        <td><%= attr_name %> : <%= attr_value %> </td>  
+      <% end %>
+      <tr>
+        <td><%= link_to 'Show', model  %></td>
+        <td><%= link_to 'Edit', model, action: "edit" %></td>
+        <td><%= link_to 'Destroy', model , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "New #{@models[0].class.name}", @models[0], action: "new", method: 'post' %>

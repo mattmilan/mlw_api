@@ -19,6 +19,8 @@ class WitchesController < ApplicationController
 
   # GET /witches/1/edit
   def edit
+    @model = Witch.find(params[:id]) # ... or whatever here
+    render :template => '_shared/common_edit_form'
   end
 
   # POST /witches

@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<% @model.attributes.except("created_at","updated_at").each do |attr_name, attr_value| %>
+    <div class="field">    
+  
+        <%= "#{attr_name}: #{attr_value || '[empty]'}"%>    
+    </div>
+  <% end %>
+
+<%= link_to 'Edit', @model, action: 'edit', method: 'post' %> |
+<%= link_to 'Back', @model %>

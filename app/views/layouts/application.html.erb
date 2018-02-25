@@ -4,7 +4,7 @@
     <title>MlwApi</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag   'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -12,7 +12,7 @@
     <div class="col-xs-3" style="width:20%; float:left;">
       <ul class="list-group">
         <%  @menu_items.map do |item| %>
-        	<li class="list-group-item"> <%= link_to "/admin/#{item}", item %> </li>
+        	<li class="list-group-item <%= %>"> <%= link_to "/admin/#{item}", item %> </li>
         <% end %>
       </ul>
     </div>
