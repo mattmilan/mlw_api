@@ -1,15 +1,27 @@
 class SpellbooksController < ApplicationController
   before_action :set_spellbook, only: [:show, :edit, :update, :destroy]
 
-  # GET /spellbooks
-  # GET /spellbooks.json
+  # GET /spellbookes
+  # GET /spellbookes.json
   def index
-    @spellbooks = Spellbook.all
+    @models = Spellbook.all
+    @headers = @models[0].attributes.keys unless @models[0].nil?
+    respond_to do |format|
+      format.html {render :template => '_shared/common_index'}
+      format.json {render @models}
+
+    end
   end
 
-  # GET /spellbooks/1
-  # GET /spellbooks/1.json
+  # GET /spellbookes/1
+  # GET /spellbookes/1.json
   def show
+    @model = Spellbook.find(params[:id]) # ... or whatever here
+    respond_to do |format|
+      format.html {render :template => '_shared/common_show'}
+      format.json { render :show, location: @model}
+    end
+
   end
 
   # GET /spellbooks/new

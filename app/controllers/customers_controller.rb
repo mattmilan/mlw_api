@@ -1,15 +1,27 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
-  # GET /customers
-  # GET /customers.json
+  # GET /customeres
+  # GET /customeres.json
   def index
-    @customers = Customer.all
+    @models = Customer.all
+    @headers = @models[0].attributes.keys unless @models[0].nil?
+    respond_to do |format|
+      format.html {render :template => '_shared/common_index'}
+      format.json {render @models}
+
+    end
   end
 
-  # GET /customers/1
-  # GET /customers/1.json
+  # GET /customeres/1
+  # GET /customeres/1.json
   def show
+    @model = Customer.find(params[:id]) # ... or whatever here
+    respond_to do |format|
+      format.html {render :template => '_shared/common_show'}
+      format.json { render :show, location: @model}
+    end
+
   end
 
   # GET /customers/new

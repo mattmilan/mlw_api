@@ -1,15 +1,27 @@
 class FamiliarsController < ApplicationController
   before_action :set_familiar, only: [:show, :edit, :update, :destroy]
 
-  # GET /familiars
-  # GET /familiars.json
+  # GET /familiares
+  # GET /familiares.json
   def index
-    @familiars = Familiar.all
+    @models = Familiar.all
+    @headers = @models[0].attributes.keys unless @models[0].nil?
+    respond_to do |format|
+      format.html {render :template => '_shared/common_index'}
+      format.json {render @models}
+
+    end
   end
 
-  # GET /familiars/1
-  # GET /familiars/1.json
+  # GET /familiares/1
+  # GET /familiares/1.json
   def show
+    @model = Familiar.find(params[:id]) # ... or whatever here
+    respond_to do |format|
+      format.html {render :template => '_shared/common_show'}
+      format.json { render :show, location: @model}
+    end
+
   end
 
   # GET /familiars/new

@@ -1,15 +1,27 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
-  # GET /recipes
-  # GET /recipes.json
+  # GET /recipees
+  # GET /recipees.json
   def index
-    @recipes = Recipe.all
+    @models = Recipe.all
+    @headers = @models[0].attributes.keys unless @models[0].nil?
+    respond_to do |format|
+      format.html {render :template => '_shared/common_index'}
+      format.json {render @models}
+
+    end
   end
 
-  # GET /recipes/1
-  # GET /recipes/1.json
+  # GET /recipees/1
+  # GET /recipees/1.json
   def show
+    @model = Recipe.find(params[:id]) # ... or whatever here
+    respond_to do |format|
+      format.html {render :template => '_shared/common_show'}
+      format.json { render :show, location: @model}
+    end
+
   end
 
   # GET /recipes/new

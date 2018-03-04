@@ -1,15 +1,27 @@
 class IntrudersController < ApplicationController
   before_action :set_intruder, only: [:show, :edit, :update, :destroy]
 
-  # GET /intruders
-  # GET /intruders.json
+  # GET /intruderes
+  # GET /intruderes.json
   def index
-    @intruders = Intruder.all
+    @models = Intruder.all
+    @headers = @models[0].attributes.keys unless @models[0].nil?
+    respond_to do |format|
+      format.html {render :template => '_shared/common_index'}
+      format.json {render @models}
+
+    end
   end
 
-  # GET /intruders/1
-  # GET /intruders/1.json
+  # GET /intruderes/1
+  # GET /intruderes/1.json
   def show
+    @model = Intruder.find(params[:id]) # ... or whatever here
+    respond_to do |format|
+      format.html {render :template => '_shared/common_show'}
+      format.json { render :show, location: @model}
+    end
+
   end
 
   # GET /intruders/new

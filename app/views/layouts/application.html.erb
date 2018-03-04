@@ -9,15 +9,20 @@
   </head>
 
   <body>
-    <div class="col-xs-3" style="width:20%; float:left;">
-      <ul class="list-group">
-        <%  @menu_items.map do |item| %>
-        	<li class="list-group-item <%= %>"> <%= link_to "/admin/#{item}", item %> </li>
-        <% end %>
-      </ul>
-    </div>
-    <div class="col-xs-9" style="width:80%; float:right;">
-      <%= yield %>
+    <div class="container">
+      <div class="row">
+        <div class="col-3" >
+          <h1>Navigation</h1>
+          <ul class="list-group">
+            <%  @menu_items.map do |item| %>
+              <li class="list-group-item <%= %>"> <%= link_to item, item, action: :index %> </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="col-9">
+          <%= yield %>
+        </div>
+      </div>
     </div>
   </body>
 </html>

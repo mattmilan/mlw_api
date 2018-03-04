@@ -4,12 +4,24 @@ class WitchesController < ApplicationController
   # GET /witches
   # GET /witches.json
   def index
-    @witches = Witch.all
+    @models = Witch.all
+    @headers = @models[0].attributes.keys unless @models[0].nil?
+    respond_to do |format|
+      format.html {render :template => '_shared/common_index'}
+      format.json {render @models}
+
+    end
   end
 
   # GET /witches/1
   # GET /witches/1.json
   def show
+    @model = Witch.find(params[:id]) # ... or whatever here
+    respond_to do |format|
+      format.html {render :template => '_shared/common_show'}
+      format.json { render :show, location: @model}
+    end
+
   end
 
   # GET /witches/new

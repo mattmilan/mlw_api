@@ -1,19 +1,27 @@
 class ContainersController < ApplicationController
   before_action :set_container, only: [:show, :edit, :update, :destroy]
 
-  # GET /containers
-  # GET /containers.json
+  # GET /containeres
+  # GET /containeres.json
   def index
     @models = Container.all
-    @headers = @models[0].attributes.keys
-    render :template => '_shared/common_index'
+    @headers = @models[0].attributes.keys unless @models[0].nil?
+    respond_to do |format|
+      format.html {render :template => '_shared/common_index'}
+      format.json {render @models}
+
+    end
   end
 
-  # GET /containers/1
-  # GET /containers/1.json
+  # GET /containeres/1
+  # GET /containeres/1.json
   def show
     @model = Container.find(params[:id]) # ... or whatever here
-    render :template => '_shared/common_show'
+    respond_to do |format|
+      format.html {render :template => '_shared/common_show'}
+      format.json { render :show, location: @model}
+    end
+
   end
 
 

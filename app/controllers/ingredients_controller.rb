@@ -1,15 +1,27 @@
 class IngredientsController < ApplicationController
   before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
 
-  # GET /ingredients
-  # GET /ingredients.json
+  # GET /ingredientes
+  # GET /ingredientes.json
   def index
-    @ingredients = Ingredient.all
+    @models = Ingredient.all
+    @headers = @models[0].attributes.keys unless @models[0].nil?
+    respond_to do |format|
+      format.html {render :template => '_shared/common_index'}
+      format.json {render @models}
+
+    end
   end
 
-  # GET /ingredients/1
-  # GET /ingredients/1.json
+  # GET /ingredientes/1
+  # GET /ingredientes/1.json
   def show
+    @model = Ingredient.find(params[:id]) # ... or whatever here
+    respond_to do |format|
+      format.html {render :template => '_shared/common_show'}
+      format.json { render :show, location: @model}
+    end
+
   end
 
   # GET /ingredients/new
@@ -71,6 +83,6 @@ class IngredientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ingredient_params
-      params.require(:ingredient).permit(:recipe_id, :container_id, :name, :tooltip, :description, :img_url, :element, :origin)
+      params.require(:ingredient).permit(:recipe_id, :ingredient_id, :name, :tooltip, :description, :img_url, :element, :origin)
     end
 end

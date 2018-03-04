@@ -13,18 +13,18 @@ spellbooks = Spellbook.create([
 		{name: 'Picture Book'},
 	])
 recipes = Recipe.create([
-		{name:"Tea party potion",},
-		{name:"Sparkle Smoke"},
-		{name:"Hiding potion"},
-		{name:"Room cleaning potion"},
-		{name:"Animorph potion"},
+		{name:"Tea party potion",		 spellbook: spellbooks[0]},
+		{name:"Sparkle Smoke",		 spellbook: spellbooks[0]},
+		{name:"Hiding potion",		 spellbook: spellbooks[0]},
+		{name:"Room cleaning potion",		 spellbook: spellbooks[0]},
+		{name:"Animorph potion",		 spellbook: spellbooks[0]},
 	])
 ingredients = Ingredient.create([
-		{name: "orange"},
-		{name: "peach"},
-		{name: "pear"},
-		{name: "mango"},
-		{name: "banana"},
+		{name: "orange", recipe: recipes[0]},
+		{name: "peach",  recipe: recipes[0]},
+		{name: "pear",   recipe: recipes[0]},
+		{name: "mango",  recipe: recipes[0]},
+		{name: "banana", recipe: recipes[0]},
 	])
 containers = Container.create([
 		{name: "desk"},
